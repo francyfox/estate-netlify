@@ -1,17 +1,16 @@
-[functions]
-  external_node_modules = ["express"]
-  node_bundler = "esbuild"
-
 [[redirects]]
-  force = true
-  from = "/api/*"
-  status = 200
-  to = "/.netlify/functions/api/:splat"
+    force = true
+    from = "/api/*"
+    status = 200
+    to = "/.netlify/functions/api/:splat"
 
 [build]
     base='/'
     publish='applications/frontend/dist'
-    command='pnpm --filter frontend build'
+    command='pnpm --filter server build && pnpm --filter frontend build'
+
+[functions]
+    directory = "/applications/server/dist"
 
 # Also put headers
 [[headers]]
