@@ -8,8 +8,6 @@
     base='/'
     publish='applications/frontend/dist'
     command='pnpm --filter server build && pnpm --filter frontend build'
-    [build.environment]
-        NODE_VERSION = "18"
 
 [functions]
     external_node_modules = ["express", "faker-js"]
