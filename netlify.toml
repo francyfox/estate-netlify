@@ -8,9 +8,12 @@
     base='/'
     publish='applications/frontend/dist'
     command='pnpm --filter server build && pnpm --filter frontend build'
+    [build.environment]
+        NODE_VERSION = "18"
 
 [functions]
-    directory = "/applications/server/dist"
+    external_node_modules = ["express", "faker-js"]
+    node_bundler = "esbuild"
 
 # Also put headers
 [[headers]]
