@@ -7,7 +7,7 @@
 [build]
     base='/'
     publish='applications/frontend/dist'
-    command='pnpm --filter server build && pnpm --filter frontend build'
+    command='pnpm --filter frontend build'
 
 [functions]
     external_node_modules = ["express", "faker-js"]
